@@ -1,0 +1,284 @@
+/* Enhanced Chatbot UI Styles with Proper Text Sizing */
+
+/* Main chat container */
+#messages {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #e1e1e1;
+    padding: 16px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.5;
+}
+
+/* Message bubbles */
+.msg {
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    max-width: 85%;
+    font-size: 15px; /* Increased from typical 13-14px */
+    line-height: 1.6;
+    word-wrap: break-word;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* User messages */
+.msg.user {
+    background-color: #007bff;
+    color: white;
+    margin-left: auto;
+    text-align: right;
+    font-weight: 500;
+}
+
+/* Bot messages */
+.msg.bot {
+    background-color: white;
+    color: #333;
+    border: 1px solid #e1e1e1;
+    margin-right: auto;
+}
+
+/* Natural response styling */
+.msg.bot.natural-response {
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 16px;
+}
+
+/* Structured response sections */
+.response-section {
+    margin-bottom: 20px;
+    padding: 12px 0;
+}
+
+.response-section:last-child {
+    margin-bottom: 0;
+}
+
+/* Section headings */
+.response-section h3 {
+    font-size: 16px; /* Increased from typical 14px */
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Lists in structured responses */
+.response-section ul {
+    margin: 0;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.response-section li {
+    margin-bottom: 8px;
+    font-size: 14px; /* Slightly smaller than main text but still readable */
+    line-height: 1.5;
+    color: #444;
+}
+
+.response-section li:last-child {
+    margin-bottom: 0;
+}
+
+/* Summary paragraphs */
+.response-section p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Links in references */
+.response-section a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.response-section a:hover {
+    text-decoration: underline;
+}
+
+/* Different section styling */
+.response-section.main-points {
+    background-color: #f8f9ff;
+    border-left: 4px solid #007bff;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+.response-section.findings {
+    background-color: #f0f9ff;
+    border-left: 4px solid #0ea5e9;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+.response-section.suggestions {
+    background-color: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+.response-section.references {
+    background-color: #fefce8;
+    border-left: 4px solid #eab308;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+.response-section.summary {
+    background-color: #faf5ff;
+    border-left: 4px solid #a855f7;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+/* Input area */
+#user-input {
+    width: 100%;
+    min-height: 40px;
+    max-height: 120px;
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px; /* Increased input text size */
+    font-family: inherit;
+    line-height: 1.4;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+#user-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Send button */
+#send-btn {
+    margin-top: 8px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#send-btn:hover {
+    background-color: #0056b3;
+}
+
+#send-btn:active {
+    background-color: #004085;
+}
+
+/* Typing indicator */
+.typing-indicator {
+    background-color: #e9ecef !important;
+    color: #6c757d;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.typing-indicator .dots {
+    display: flex;
+    gap: 2px;
+}
+
+.typing-indicator .dots span {
+    width: 4px;
+    height: 4px;
+    background-color: #6c757d;
+    border-radius: 50%;
+    animation: typing 1.4s infinite;
+}
+
+.typing-indicator .dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator .dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 60%, 100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+    30% {
+        transform: translateY(-8px);
+        opacity: 1;
+    }
+}
+
+/* Scrollbar styling for messages */
+#messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+#messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+#messages::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+#messages::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    .msg {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+    
+    .response-section h3 {
+        font-size: 15px;
+    }
+    
+    .response-section li {
+        font-size: 13px;
+    }
+    
+    #user-input {
+        font-size: 14px;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .msg.bot {
+        border-width: 2px;
+        border-color: #333;
+    }
+    
+    .response-section h3 {
+        color: #000;
+    }
+    
+    .response-section li {
+        color: #000;
+    }
+}
